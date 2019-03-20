@@ -33,15 +33,15 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "heroku-postbuild": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
+    "start": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "engines": {
-    "node": "^11.2.0",
-    "npm": "^6.9.0"
+    "node": "11.12.0",
+    "npm": "6.9.0"
   },
   "repository": {
     "type": "git",

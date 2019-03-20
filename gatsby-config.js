@@ -5,8 +5,8 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Gatsby Demo`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Gatsby Prismic Demo`,
+    author: `Ancel Miller`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -40,16 +40,5 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // {
-    //   resolve: `gatsby-source-datocms`,
-    //   options: {
-    //     apiToken: `956cf557aeac7e824142a8bc3e0a6e`,
-    //     preview: false,
-    //     disableLiveReload: false,
-    //   },
-    // },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
   ],
 }

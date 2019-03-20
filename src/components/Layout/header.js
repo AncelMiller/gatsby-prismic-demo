@@ -2,7 +2,24 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
+
+function renderNavItems(nav){
+  console.log(nav);
+  
+  return nav.map(navItem => {
+    return <Link 
+      key={navItem.node.id}
+      to={`/${navItem.node.slugs[0]}`}
+      style={{
+        color: `white`,
+        textDecoration: `none`,
+        padding: '20px'
+      }}
+      >{navItem.node.data.title.text}</Link>
+  });
+}
+
+const Header = ({ siteTitle, nav }) => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -27,6 +44,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      {renderNavItems(nav)}
     </div>
   </header>
 )

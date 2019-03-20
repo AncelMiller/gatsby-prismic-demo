@@ -15,17 +15,27 @@ import "./layout.css"
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
+      query NavQuery {
+        allPrismicNavigationItem {
+          edges {
+            node {
+              id
+              type
+              slugs
+              data{
+                title {
+                  html
+                  text
+                }
+              }
+            }
           }
         }
       }
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle="Demo" nav={data.allPrismicNavigationItem.edges} />
         <div
           style={{
             margin: `0 auto`,

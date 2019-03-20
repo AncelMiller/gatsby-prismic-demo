@@ -39,6 +39,10 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
+  "engines": {
+    "node": "^11.2.0",
+    "npm": "^6.9.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"

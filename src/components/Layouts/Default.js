@@ -1,31 +1,30 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+import Header from "./Header"
+import "./_default.css"
 
-const Layout = ({ children }) => (
+const DefaultLayout = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query NavQuery {
-        allPrismicNavigationItem {
-          edges {
-            node {
-              id
-              type
-              slugs
-              data{
-                title {
-                  html
-                  text
+      query MainNavigationMenuQuery {
+        prismicNavigationMenu {
+          id
+          data {
+            title
+            navigation_items{
+              navigation_item {
+                id
+                document {
+                  id
+                  data {
+                    title {
+                      html
+                      text
+                    }
+                    link
+                  }
                 }
               }
             }
@@ -35,7 +34,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle="Demo" nav={data.allPrismicNavigationItem.edges} />
+        <Header siteTitle="Demo" nav={data.prismicNavigationMenu.data.navigation_items} />
         <div
           style={{
             margin: `0 auto`,
@@ -56,8 +55,8 @@ const Layout = ({ children }) => (
   />
 )
 
-Layout.propTypes = {
+DefaultLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default DefaultLayout
